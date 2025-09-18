@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact US</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: moccasin;
+        }
+        .tagline{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            background-color: saddlebrown;
+        }
+        .header{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 30px;
+            border-bottom: 1px solid saddlebrown;
+            padding: 10px 20px;
+        }
+        .logo img{
+            width: 80px;
+            height: 80px;
+            background: none;
+        }
+        .navbar{
+            display: flex;
+            gap: 60px;
+        }
+        .navbar a{
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+        }
+        .searchbar{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 2px solid saddlebrown;
+            border-radius: 20px;
+            background-color: white;
+            width: 300px;
+            height: 50px;
+        }
+        .searchbar input{
+            text-align: center;
+            border: none;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .icon{
+            height: 30px;
+        }
+        .icons{
+            display: flex;
+            height: 40px;
+            gap: 30px;
+        }
+        .icons img:last-child{
+            height: 40px;
+        }
+        .border{
+            text-align: center;
+            font-size: 22px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .divider{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px auto;
+            width:28%;
+        }
+        .divider::before, .divider::after{
+            content: "";
+            flex: 1;
+            border-bottom: 2px solid saddlebrown;
+        }
+        .divider span{
+            width: 18px;
+            height: 18px;
+            background-color: saddlebrown;
+            transform: rotate(45deg);
+            margin: 0 12px;
+        }
+        .center{
+            text-align: center;
+            font-size: 18px;
+            font-weight: 500;
+            margin-top: 40px;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            border-right: 2px solid saddlebrown;
+            padding: 30px;
+            gap: 60px;
+        }
+        .form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-right: 2px solid saddlebrown;
+            padding: 30px;
+            gap: 10px;
+        }
+        .form input, textarea{
+            border-radius: 6px;
+            border: 2px solid saddlebrown;
+            padding: 10px 20px;
+            margin-bottom: 30px;
+            background-color: moccasin;
+        }
+        .row{
+            display: flex;
+            gap: 20px;
+            width: 100%;
+        }
+        .form-group{
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .form-group1{
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .form-group1 input{
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            background-color: olive;
+            font-size: 18px;
+            color: white;
+        }
+        .form-group1 input::placeholder{
+            color: white;
+            font-size: 18px;
+            opacity: 1;
+        }
+        .form p{
+            font-size: 18px;
+        }
+        .btn{
+            padding: 10px 20px;
+            border-radius: 8px;
+            background-color: olive;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            border: none;
+        }
+        .paragraph h3{
+            font-weight: bold;
+        }
+        .paragraph p{
+            font-weight: 400;
+            font-size: 18px;
+        }
+        .footer{
+            background-color: saddlebrown;
+            color: white;
+        }
+        .footer ul{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10px;
+            list-style-type: none;
+            border-bottom: 2px solid white;
+            padding-top: 20px;
+        }
+        h3{
+            font-weight: 500;
+        }
+        .footerlogo{
+            width: 200px;
+            margin-top: 60px;
+        }
+        .copyrights{
+            display: flex;
+            padding: 20px;
+            font-size: 18px;
+            font-weight: 500;
+            justify-content: center;
+            padding: 20px;
+        }
+        @media (max-width:1000px){
+            .header{padding:10px 14px; gap:18px;}
+            .logo img{width:64px; height:64px;}
+            .searchbar{width:220px; height:42px;}
+            .container{gap:30px; padding:20px;}
+            .form{padding:24px; border-right:2px solid saddlebrown;}
+            .row{gap:14px;}
+            .container1 img, .paragraph img{max-width:100%; height:auto;}
+        }
+        @media (max-width:700px){
+            .header{padding:10px 12px; gap:12px; flex-wrap:wrap;}
+            .logo img{width:56px; height:56px;}
+            .searchbar{width:160px; height:36px;}
+            .container{flex-direction:column; align-items:stretch; gap:18px; padding:14px; border-right:none;}
+            .form{width:100%; padding:18px; border-right:none;}
+            .row{flex-direction:column; gap:12px; width:100%;}
+            .form input, textarea{width:100%; box-sizing:border-box;}
+            .form p{font-size:15px;}
+            .paragraph{padding:12px; text-align:left;}
+            .paragraph h2{font-size:20px;}
+        }
+        @media (max-width:480px){
+            .container{padding:10px; gap:12px;}
+            .searchbar{width:140px; height:34px;}
+            .form input, textarea{padding:8px 12px;}
+            .form p, .paragraph p{font-size:14px; line-height:1.6;}
+            .border{font-size:20px;}
+            .divider span{width:14px; height:14px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="tagline">
+            <p>Welcome To Our Shop. Kindly Note, Currently We Delivery To All Location!. Thank You For Your Love And Support.</p>
+        </div>
+    <header class="header">
+        <div class="logo">
+            <img src="cherry_cake_transparent.png" alt="Cake Logo">
+        </div>
+        <nav class="navbar">
+            <a href="products.html">PRODUCTS</a>
+            <a href="aboutus.html">ABOUT US</a>
+            <a href="specialcakes.html">SPECIAL CAKES</a>
+            <a href="snacks.html">SNACKS</a>
+            <a href="contactus.html">CONTACT US</a>
+        </nav>
+        <div class="searchbar">
+            <input type="text" placeholder="Search">
+            <img src="search.png" alt="Search" class="icon">
+        </div>
+        </div>
+        <div class="icons">
+            <a href="loginsignup.html"><img src="https://img.icons8.com/?size=100&id=7819&format=png" alt="Cart"></a>
+            <a href="shoppingcart.html"><img src="https://img.icons8.com/?size=60&id=60952&format=png" alt="Cart"></a>
+        </div>
+    </header>
+    <h3 class="border">Contact Us</h3>
+    <div class="divider"><span></span></div>
+    <p class="center">We Would Love To Hear From You. Share Your Thoughts And Queries With Us!</p>
+    <div class="container">
+        <div class="form">
+            <div class="row">
+                <div class="form-group">
+                    <label for="name">Name*</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact No*</label>
+                    <input type="number" id="contact" name="contact" required>     
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" rows="5" cols="30" required>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="7" cols="50" required></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group1">
+                <label for="attach">Attach Files</label>
+                <input type="text" id="attach" name="attach" class="fill" placeholder="Choose File" required>
+                </div>
+            </div>
+            <p>Note: We Accept File Sizes Up To 1mb And In A Jpeg, Png or Pdf Format.</p>
+            <button type="submit" class="btn">Submit</button>
+        </div>
+        <div class="paragraph">
+            <h2>Shino Cake Private Limited</h2>
+            <h3>Registered Address:</h3>
+            <p>32/33 A, Deonar Village Road, Opp. Metal Box<br>Company, Govandi East,<br>Mumbai-400088,<br>Maharashtra, India</p><br>
+            <h3>Grievance & Nodal Officer:</h3>
+            <p>Ms. Simantini Budukh,<br>General Counsel & Company Secretary</p>
+            <h2>Contact Details:</h2>
+            <p><i class="fa fa-phone"></i> +91 8879438031</p>
+            <p><i class="fa fa-envelope"></i> info@cakeshop.com</p>
+        </div>
+    </div>
+    <footer class="footer">
+        <ul>
+            <li>
+                <img src="cherry_cake_transparent.png" alt="Cake Logo" class="footerlogo">
+            </li>
+            <li>
+                <h3>ONLINE SHOPPING</h3>
+                <p>Home</p>
+                <p>Products</p>
+                <p>About Us</p>
+                <p>Special Cake</p>
+                <p>Snacks</p>
+                <p>Contact</p>
+            </li>
+            <li>
+                <h3>USEFUL LINKS</h3>
+                <p>T & C</p>
+                <p>Booking</p>
+                <p>Cancellation</p>
+                <p>Privacy Policy</p>
+                <p>Return / Refunds</p>
+                <p>Payments</p>
+            </li>
+            <li>
+                <h3>CONTACT US</h3>
+                <p><i class="fa fa-map-marker-alt"></i>  Manek Ratna<br>3rd Floor, Block No. 304,<br>Ryna Arcade, Zakeria Road, MAlad (West),<br>Maharashtra, Mumbai, Pincode: 400064</p>
+                <p><i class="fa fa-phone"></i> +91 8879438031</p>
+                <p><i class="fa fa-envelope"></i> info@cakeshop.com</p>
+            </li>
+        </ul>
+        <div class="copyrights">
+            &copy; 2021-2025 www.cakeshop.com All Rights Reserved.
+        </div>
+    </footer>
+</body>
+</html>

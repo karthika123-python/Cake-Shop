@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4e1b9; 
+    }
+    
+     .tagline{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            background-color: saddlebrown;
+        }
+        .header{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 30px;
+            border-bottom: 1px solid saddlebrown;
+            padding: 10px 20px;
+        }
+        .logo img{
+            width: 80px;
+            height: 80px;
+            background: none;
+        }
+        .navbar{
+            display: flex;
+            gap: 60px;
+        }
+        .navbar a{
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+        }
+        .searchbar{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 2px solid saddlebrown;
+            border-radius: 20px;
+            background-color: white;
+            width: 300px;
+            height: 50px;
+        }
+        .searchbar input{
+            text-align: center;
+            border: none;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .icon{
+            height: 30px;
+        }
+        .icons{
+            display: flex;
+            height: 40px;
+            gap: 30px;
+        }
+        .icons img:last-child{
+            height: 40px;
+        }
+    .cart-container {
+      max-width: 1000px;
+      margin: 30px auto;
+      background: #f8e6c9;
+      border: 2px solid #b08a4f;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 22px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #b08a4f;
+    }
+
+    .cart-header a {
+      color: red;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid #b08a4f;
+      margin: auto;
+    }
+
+    .cart-item img {
+      width: 150px;
+      height: 120px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .item-name {
+      flex: 1;
+      margin-left: 230px;
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    .quantity {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 18px;
+      font-weight: bold;
+
+    }
+
+    .quantity button {
+      padding: 5px 10px;
+      border: 1px solid #555;
+      background: #e0e0e0;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .price {
+      font-weight: 600;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .remove {
+      color: red;
+      font-size: 18px;
+      display: block;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    .buy-btn {
+      background: olive;
+      color: white;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .cart-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0 0;
+      font-weight: 600;
+      font-size: 18px;
+    }
+    .total{
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 100px;
+      font-weight: bold;
+    }
+    .cart-footer .buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .continue-btn {
+      background: #d69d9d;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .checkout-btn {
+      background: olive;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 18px;
+      cursor: pointer;
+    }
+ 
+    .footer{
+            background-color: saddlebrown;
+            color: white;
+        }
+        .footer ul{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10px;
+            list-style-type: none;
+            border-bottom: 2px solid white;
+            padding-top: 20px;
+        }
+        h3{
+            font-weight: 500;
+        }
+        .footerlogo{
+            width: 200px;
+            margin-top: 60px;
+        }
+        .copyrights{
+            display: flex;
+            padding: 20px;
+            font-size: 18px;
+            font-weight: 500;
+            justify-content: center;
+            padding: 20px;
+        }
+    @media(max-width:768px){
+      .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .item-name {margin: 10px 0;}
+      .cart-footer {flex-direction: column; gap: 20px;}
+    }
+  </style>
+</head>
+<body>
+   <div class="tagline">
+            <p>Welcome To Our Shop. Kindly Note, Currently We Delivery To All Location!. Thank You For Your Love And Support.</p>
+        </div>
+    <header class="header">
+        <div class="logo">
+            <img src="cherry_cake_transparent.png" alt="Cake Logo">
+        </div>
+        <nav class="navbar">
+            <a href="products.html">PRODUCTS</a>
+            <a href="aboutus.html">ABOUT US</a>
+            <a href="specialcakes.html">SPECIAL CAKES</a>
+            <a href="snacks.html">SNACKS</a>
+            <a href="contactus.html">CONTACT US</a>
+        </nav>
+        <div class="searchbar">
+            <input type="text" placeholder="Search">
+            <img src="search.png" alt="Search" class="icon">
+        </div>
+        </div>
+        <div class="icons">
+            <img src="https://img.icons8.com/?size=100&id=7819&format=png" alt="Cart">
+            <a href="shoppingcart.html"><img src="https://img.icons8.com/?size=60&id=60952&format=png" alt="Cart"></a>
+        </div>
+    </header>
+  <div class="cart-container">
+    <div class="cart-header">
+      <span>Shopping Cart</span>
+      <a href="#">Remove All</a>
+    </div>
+
+    <div class="cart-item">
+      <img src="cake9.jpg" alt="White Forest Cake">
+      <div class="item-name">White Forest Cake
+      <div class="quantity">
+        <button>+</button> 1 <button>-</button>
+      </div>
+      </div>
+      <div>
+        <div class="price">Rs.800
+        <a href="#" class="remove">Remove</a>
+        <button class="buy-btn">Buy Now</button>
+      </div>
+      </div>
+    </div>
+
+    <div class="cart-item">
+      <img src="cake27.jpg" alt="Blueberry Cake">
+      <div class="item-name">Blueberry Cake
+      <div class="quantity">
+        <button>+</button> 1 <button>-</button>
+      </div>
+      </div>
+      <div>
+        <div class="price">Rs.800
+        <a href="#" class="remove">Remove</a>
+        <button class="buy-btn">Buy Now</button>
+      </div>
+      </div>
+    </div>
+
+    <div class="cart-footer">
+      <div class="total">
+        <h3>Sub-Total:</h3>
+        <h3>Rs.1600</h3>
+      </div>
+      <div class="buttons">
+        <button class="continue-btn">Continue Shopping</button>
+        <button class="checkout-btn">Checkout</button>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+        <ul>
+            <li>
+                <img src="cherry_cake_transparent.png" alt="Cake Logo" class="footerlogo">
+            </li>
+            <li>
+                <h3>ONLINE SHOPPING</h3>
+                <p>Home</p>
+                <p>Products</p>
+                <p>About Us</p>
+                <p>Special Cake</p>
+                <p>Snacks</p>
+                <p>Contact</p>
+            </li>
+            <li>
+                <h3>USEFUL LINKS</h3>
+                <p>T & C</p>
+                <p>Booking</p>
+                <p>Cancellation</p>
+                <p>Privacy Policy</p>
+                <p>Return / Refunds</p>
+                <p>Payments</p>
+            </li>
+            <li>
+                <h3>CONTACT US</h3>
+                <p><i class="fa fa-map-marker-alt"></i>  Manek Ratna<br>3rd Floor, Block No. 304,<br>Ryna Arcade, Zakeria Road, MAlad (West),<br>Maharashtra, Mumbai, Pincode: 400064</p>
+                <p><i class="fa fa-phone"></i> +91 8879438031</p>
+                <p><i class="fa fa-envelope"></i> info@cakeshop.com</p>
+            </li>
+        </ul>
+        <div class="copyrights">
+            &copy; 2021-2025 www.cakeshop.com All Rights Reserved.
+        </div>
+    </footer>
+</body>
+</html>

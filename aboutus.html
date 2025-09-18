@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: moccasin;
+        }
+        .tagline{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            background-color: saddlebrown;
+        }
+        .header{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 30px;
+            border-bottom: 1px solid saddlebrown;
+            padding: 10px 20px;
+        }
+        .logo img{
+            width: 80px;
+            height: 80px;
+            background: none;
+        }
+        .navbar{
+            display: flex;
+            gap: 60px;
+        }
+        .navbar a{
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+        }
+        .searchbar{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 2px solid saddlebrown;
+            border-radius: 20px;
+            background-color: white;
+            width: 300px;
+            height: 50px;
+        }
+        .searchbar input{
+            text-align: center;
+            border: none;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .icon{
+            height: 30px;
+        }
+        .icons{
+            display: flex;
+            height: 40px;
+            gap: 30px;
+        }
+        .icons img:last-child{
+            height: 40px;
+        }
+        .about img{
+            width: 100%;
+            margin-top: 3px;
+        }
+        .paragraph1{
+            padding: 40px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.9;
+        }
+        .capitalized{
+            text-transform: capitalize;
+        }
+        .paragraph2{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.9;
+            padding: 40px;
+        }
+        .paragraph2 img{
+            width: 600px;
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+        .paragraph2 p{
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.9;
+            flex: 1;
+        }
+        .footer{
+            background-color: saddlebrown;
+            color: white;
+        }
+        .footer ul{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10px;
+            list-style-type: none;
+            border-bottom: 2px solid white;
+            padding-top: 20px;
+        }
+        h3{
+            font-weight: 500;
+        }
+        .footerlogo{
+            width: 200px;
+            margin-top: 60px;
+        }
+        .copyrights{
+            display: flex;
+            padding: 20px;
+            font-size: 18px;
+            font-weight: 500;
+            justify-content: center;
+            padding: 20px;
+        }
+        @media (max-width:1000px){
+            .logo img{width:64px;height:64px;}
+            .searchbar{width:220px;height:42px;}
+            .navbar{gap:24px;}
+            .container{padding:18px;}
+            .paragraph1,.paragraph2{padding:28px;}
+            .paragraph2{gap:18px;}
+            .paragraph2 img{width:48%;max-width:420px;height:auto;border-radius:10px;}
+            .paragraph2 p{flex:1;}
+        }
+        @media (max-width:700px){
+            .header{padding:10px 12px;gap:12px;}
+            .navbar{gap:14px;flex-wrap:wrap;}
+            .searchbar{width:160px;height:36px;}
+            .container{padding:14px;flex-direction:column;align-items:stretch;}
+            .paragraph1{padding:18px;font-size:15px;line-height:1.7;}
+            .paragraph2{flex-direction:column;align-items:center;gap:12px;padding:16px;}
+            .paragraph2 img{width:100%;max-width:560px;height:auto;border-radius:10px;margin:0;}
+            .paragraph2 p{width:100%;font-size:15px;line-height:1.7;}
+            .about img{height:auto;}
+            footer .footerlogo{width:140px;margin-top:24px;}
+            .footer ul{flex-direction:column;gap:12px;}
+        }
+        @media (max-width:480px){
+            .paragraph1,.paragraph2{padding:12px;font-size:14px;line-height:1.6;}
+            .searchbar{width:140px;height:34px;}
+            .logo img{width:56px;height:56px;}
+            .divider span{width:14px;height:14px;}
+            .footer ul{padding-top:12px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="tagline">
+            <p>Welcome To Our Shop. Kindly Note, Currently We Delivery To All Location!. Thank You For Your Love And Support.</p>
+        </div>
+    <header class="header">
+        <div class="logo">
+            <img src="cherry_cake_transparent.png" alt="Cake Logo">
+        </div>
+        <nav class="navbar">
+            <a href="products.html">PRODUCTS</a>
+            <a href="aboutus.html">ABOUT US</a>
+            <a href="specialcakes.html">SPECIAL CAKES</a>
+            <a href="snacks.html">SNACKS</a>
+            <a href="contactus.html">CONTACT US</a>
+        </nav>
+        <div class="searchbar">
+            <input type="text" placeholder="Search">
+            <img src="search.png" alt="Search" class="icon">
+        </div>
+        </div>
+        <div class="icons">
+            <a href="loginsignup.html"><img src="https://img.icons8.com/?size=100&id=7819&format=png" alt="Cart"></a>
+            <a href="shoppingcart.html"><img src="https://img.icons8.com/?size=60&id=60952&format=png" alt="Cart"></a>
+        </div>
+    </header>
+    <div class="about">
+        <img src="about1.jpg" alt="About Us 1">
+    </div>
+    <div class="paragraph1">
+        <p class="capitalized">
+            our journey began in 2022, with nothing more than a passion for baking and dream to share our creations with the world. starting with zero knowledge about running a <br>business we faced numerous challenges and uncertainties. yet we had an unwavering hope and confidence in our ability to Create delicious and delightful cakes that could <br>bring joy to others.
+        </p>
+        <p class="capitalized">
+            from the very beginning, we have been committed to crafting cakes that not only taste incredible but also capture the essence of celebration and love. our kitchen became a <br>place of experimentation, creativity, and learning. with each cake we baked, we grew more determined to perfect our recipes and techniques.
+        </p>
+        <p class="capitalized">      
+            The road wasn't always smooth. we experienced both triumphs and setbacks, but with every obstacle, we learned and grew stronger. our journey has been a treatment to <br>perseverance, dedication, and the power of a shared dream. we are incredibly grateful for the support and encouragement we received from our community, friends, and family.<br> Your trust and belief in us fueled our drive to keep going, even when the going got tough.
+        </p>
+        <p class="capitalized">
+            Thank You for being a part of our journey. your continued support and blessings have made it possible for us to achieve our dreams. as we move forward, we promise to keep <br>delivering the best cakes and continue to make your celebrations even sweeter.  
+        </p>
+    </div>
+    <div class="container">
+        <div class="paragraph2">
+            <img src="cake9.jpg" alt="Butterscotch Cake">
+            <p class="capitalized">
+                now, as we celebrate our 12th year business, we look back with immense pride <br>and gratitude. what started as a humble venture has blossomed into a beloved <br>cake shop, known for its quality, creativity, and heart. our cakes have become a <br>part of countless celebrations, marking birthdays, weddings, anniversaries, and many other special moments. <br><br>
+            
+                At call for cake, every cake is baked with love, care, and attention to deail. we use <br>only the finest ingredients to ensure that every bite is a delightful experience. our <br>team, which has grown over the years, shares the same passion for baking and <br>commitment to excellence that we started with.<br><br>
+        
+                Thank you for being a part of our journey. your continued support and blessings <br>have made it possible for us to achieve our dreams. as we move forward, we <br>promise to keep delivering the best cakes and continue to make your celebrations <br>even sweeter.<br>
+            </p>
+        </div>
+    </div>
+    <footer class="footer">
+        <ul>
+            <li>
+                <img src="cherry_cake_transparent.png" alt="Cake Logo" class="footerlogo">
+            </li>
+            <li>
+                <h3>ONLINE SHOPPING</h3>
+                <p>Home</p>
+                <p>Products</p>
+                <p>About Us</p>
+                <p>Special Cake</p>
+                <p>Snacks</p>
+                <p>Contact</p>
+            </li>
+            <li>
+                <h3>USEFUL LINKS</h3>
+                <p>T & C</p>
+                <p>Booking</p>
+                <p>Cancellation</p>
+                <p>Privacy Policy</p>
+                <p>Return / Refunds</p>
+                <p>Payments</p>
+            </li>
+            <li>
+                <h3>CONTACT US</h3>
+                <p><i class="fa fa-map-marker-alt"></i>  Manek Ratna<br>3rd Floor, Block No. 304,<br>Ryna Arcade, Zakeria Road, MAlad (West),<br>Maharashtra, Mumbai, Pincode: 400064</p>
+                <p><i class="fa fa-phone"></i> +91 8879438031</p>
+                <p><i class="fa fa-envelope"></i> info@cakeshop.com</p>
+            </li>
+        </ul>
+        <div class="copyrights">
+            &copy; 2021-2025 www.cakeshop.com All Rights Reserved.
+        </div>
+    </footer>
+</body>
+</html>

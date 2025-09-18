@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: moccasin;
+        }
+        .tagline{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            background-color: saddlebrown;
+        }
+        .header{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 30px;
+            border-bottom: 1px solid saddlebrown;
+            padding: 10px 20px;
+        }
+        .logo img{
+            width: 80px;
+            height: 80px;
+            background: none;
+        }
+        .navbar{
+            display: flex;
+            gap: 60px;
+        }
+        .navbar a{
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+        }
+        .searchbar{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 2px solid saddlebrown;
+            border-radius: 20px;
+            background-color: white;
+            width: 300px;
+            height: 50px;
+        }
+        .searchbar input{
+            text-align: center;
+            border: none;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .icon{
+            height: 30px;
+        }
+        .icons{
+            display: flex;
+            height: 40px;
+            gap: 30px;
+        }
+        .border{
+            text-align: center;
+            font-size: 22px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .divider{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px auto;
+            width:28%;
+        }
+        .divider::before, .divider::after{
+            content: "";
+            flex: 1;
+            border-bottom: 2px solid saddlebrown;
+        }
+        .divider span{
+            width: 18px;
+            height: 18px;
+            background-color: saddlebrown;
+            transform: rotate(45deg);
+            margin: 0 12px;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+            margin: 20px;
+            padding: 30px;
+        }
+        .buttercake{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .buttercake img{
+            width: 500px;
+            height: 400px;
+            border-radius: 8px;
+        }
+        .buttercake h2{
+            font-size: 26px;
+            font-weight: 600;
+        }
+        .stars{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 32px;
+            color: aliceblue;
+            border-bottom: 2px solid saddlebrown;
+        }
+        .stars p{
+            color: black;
+            font-size: 20px;
+            margin: 0;
+        }
+        .top-margin{
+            margin-bottom: 20px;
+        }
+        .top-margin p i{
+            color: saddlebrown;
+            font-size: 32px;
+        }
+        .top-margin p {
+            font-size: 23px;
+        }
+        .yellow{
+            border: none;
+            background-color: khaki;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 20px;
+        }
+        .redprice{
+            color: orangered;
+            font-weight: 900;
+            font-size: 24px;
+        }
+        .box label{
+            font-size: 19px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .box textarea{
+            border: 2px solid saddlebrown;
+            padding: 15px;
+            border-radius: 6px;
+            background-color: moccasin;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        .box select {
+            border: 2px solid saddlebrown;
+            padding: 15px;
+            border-radius: 6px;
+            background-color: moccasin;
+            width: 100%;
+            margin-bottom: 30px;
+            font-size: 19px;
+            font-weight: 400; 
+            color: black;
+        }
+        .box select option {
+            font-size: 19px;
+            font-weight: 600; 
+            color: black;
+        }
+        
+        textarea::placeholder{
+            color: black;
+            font-weight: 500;
+            font-size: 19px;
+        }
+        .btn button{
+            padding: 10px 20px;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background-color: olive;
+            cursor: pointer;
+        }
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: -400px; 
+            background: whitesmoke;
+            color: black;
+            padding: 20px 25px;
+            border: 2px solid black;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            font-weight: 400;
+            min-width: 280px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.5s ease;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            right: 20px; 
+        }
+
+        .toast i {
+           font-size: 20px;
+           color: black;
+        }
+        .items{
+            padding: 30px;
+            margin-top: 20px;
+        }
+        .items h1 {
+            border-bottom: 2px solid saddlebrown;
+            width: fit-content;  
+            margin-bottom: 40px;
+            text-align: left;
+        }
+        .related-item{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .cake-item img{
+            border-radius: 12px;
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+        }
+        .footer{
+            background-color: saddlebrown;
+            color: white;
+        }
+        .footer ul{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10px;
+            list-style-type: none;
+            border-bottom: 2px solid white;
+            padding-top: 20px;
+        }
+        h3{
+            font-weight: 500;
+        }
+        .footerlogo{
+            width: 200px;
+            margin-top: 60px;
+        }
+        .copyrights{
+            display: flex;
+            padding: 20px;
+            font-size: 18px;
+            font-weight: 500;
+            justify-content: center;
+            padding: 20px;
+        }
+        @media (max-width: 768px) {
+            .header, .navbar, .container, .footer ul {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+            .container { gap: 30px; padding: 15px; }
+            .buttercake img { width: 100%; height: auto; }
+            .btn { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+            .related-item { justify-content: flex-start; }
+            .cake-item img { max-width: 180px; width: 100%; height: auto; }
+            .footerlogo { margin: auto; }
+        }
+        @media (max-width: 480px) {
+            .tagline, .navbar a, .border, .buttercake h2, .box h1, .redprice { font-size: 14px; }
+            .btn button { width: 100%; }
+            .cake-item img { max-width: 150px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="tagline">
+            <p>Welcome To Our Shop. Kindly Note, Currently We Delivery To All Location!. Thank You For Your Love And Support.</p>
+        </div>
+    <header class="header">
+        <div class="logo">
+            <img src="cherry_cake_transparent.png" alt="Cake Logo">
+        </div>
+        <nav class="navbar">
+            <a href="products.html">PRODUCTS</a>
+            <a href="aboutus.html">ABOUT US</a>
+            <a href="specialcakes.html">SPECIAL CAKES</a>
+            <a href="snacks.html">SNACKS</a>
+            <a href="contactus.html">CONTACT US</a>
+        </nav>
+        <div class="searchbar">
+            <input type="text" placeholder="Search">
+            <img src="search.png" alt="Search" class="icon">
+        </div>
+        </div>
+        <div class="icons">
+            <a href="loginsignup.html"><img src="https://img.icons8.com/?size=100&id=7819&format=png" alt="Cart"></a>
+            <a href="shoppingcart.html"><img src="https://img.icons8.com/?size=60&id=60952&format=png" alt="Cart"></a>
+        </div>
+    </header>
+    <h3 class="border">Product Details</h3>
+    <div class="divider"><span></span></div>
+    <div class="container">
+        <div class="buttercake">
+            <img src="cake9.jpg" alt="Butter Cake">
+            <h2>Reviews</h2>
+            <div class="stars">
+                    ★ ★ ★ ★ ★<p>0 Reviews / Write A Review</p>
+                </div>
+        </div>
+        <div class="box">
+            <h1>White Forest Cake</h1>
+        <div class="top-margin">
+            <p><i class="fa fa-map-marker-alt"></i>  Same Day Delivery</p>
+        <div class="yellow">Min Preparation Time: 6 Hours</div>
+        <p class="redprice">Rs.800</p>
+        <label for="weight">Weight</label>
+        <select id="weight" aria-placeholder="1kg(round)">
+               <option>1kg (Round)</option>
+               <option>2kg (Square)</option>
+               <option>3kg (Heart Shape)</option>
+        </select>
+        <label for="message">Message On the Cake</label>
+        <textarea id="message" name="message" rows="7" cols="50" placeholder="Message"></textarea>
+        <div class="btn">
+            <button type="submit" class="button" onclick="showToast()">Add Cart</button>
+
+           <div id="toast" class="toast">
+           <i class="fa fa-cart-plus"></i>
+           Your item added to cart
+           </div>
+            <a href="payment.html"><button type="submit" class="button">Buy Now</button></a>
+        </div>
+        </div>
+        </div>
+    </div>
+    <div class="items">
+        <h1 class="top-margin">Related Items</h1>
+        <div class="related-item">
+            <div class="cake-item">
+                <img src="cake29.jpg" alt="cake 1">
+            </div>
+            <div class="cake-item">
+                <img src="cake30.jpg" alt="cake 1">
+            </div>
+            <div class="cake-item">
+                <img src="cake26.jpg" alt="cake 1">
+            </div>
+            <div class="cake-item">
+                <img src="cake24.jpg" alt="cake 1">
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <ul>
+            <li>
+                <img src="cherry_cake_transparent.png" alt="Cake Logo" class="footerlogo">
+            </li>
+            <li>
+                <h3>ONLINE SHOPPING</h3>
+                <p>Home</p>
+                <p>Products</p>
+                <p>About Us</p>
+                <p>Special Cake</p>
+                <p>Snacks</p>
+                <p>Contact</p>
+            </li>
+            <li>
+                <h3>USEFUL LINKS</h3>
+                <p>T & C</p>
+                <p>Booking</p>
+                <p>Cancellation</p>
+                <p>Privacy Policy</p>
+                <p>Return / Refunds</p>
+                <p>Payments</p>
+            </li>
+            <li>
+                <h3>CONTACT US</h3>
+                <p><i class="fa fa-map-marker-alt"></i>  Manek Ratna<br>3rd Floor, Block No. 304,<br>Ryna Arcade, Zakeria Road, MAlad (West),<br>Maharashtra, Mumbai, Pincode: 400064</p>
+                <p><i class="fa fa-phone"></i> +91 8879438031</p>
+                <p><i class="fa fa-envelope"></i> info@cakeshop.com</p>
+            </li>
+        </ul>
+        <div class="copyrights">
+            &copy; 2021-2025 www.cakeshop.com All Rights Reserved.
+        </div>
+    </footer>
+    <script>
+    function showToast() {
+      let toast = document.getElementById("toast");
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

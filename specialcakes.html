@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Cakes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: moccasin;
+        }
+        .tagline{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            background-color: saddlebrown;
+        }
+        .header{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 30px;
+            border-bottom: 1px solid saddlebrown;
+            padding: 10px 20px;
+        }
+        .logo img{
+            width: 80px;
+            height: 80px;
+            background: none;
+        }
+        .navbar{
+            display: flex;
+            gap: 60px;
+        }
+        .navbar a{
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+        }
+        .searchbar{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 2px solid saddlebrown;
+            border-radius: 20px;
+            background-color: white;
+            width: 300px;
+            height: 50px;
+        }
+        .searchbar input{
+            text-align: center;
+            border: none;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .icon{
+            height: 30px;
+        }
+        .icons{
+            display: flex;
+            height: 40px;
+            gap: 30px;
+        }
+        .icons img:last-child{
+            height: 40px;
+        }
+        .border{
+            text-align: center;
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .divider{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px auto;
+            width:28%;
+        }
+        .divider::before, .divider::after{
+            content: "";
+            flex: 1;
+            border-bottom: 2px solid saddlebrown;
+        }
+        .divider span{
+            width: 18px;
+            height: 18px;
+            background-color: saddlebrown;
+            transform: rotate(45deg);
+            margin: 0 12px;
+        }
+        .content{
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .cake{
+            display: flex;
+            flex-direction: column;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 30px;
+        }
+        main{
+            flex: 1;
+            min-width: 0;
+        }
+        aside{
+            width: 300px;
+            box-sizing: border-box;
+            padding: 10px;
+            height: 1330px;
+        }
+        .container1{
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            align-items: stretch;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 20px;
+        }
+        .box{
+            box-shadow: 2px 4px 8px rgba(0,0,0,0.15);
+            width: 300px;
+            height: 300px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .box img{
+            display: block;
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .products{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 8px;
+        }
+        .box1{
+            padding: 20px;
+            background-color: white;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            box-shadow: 2px 4px 8px rgba(0,0,0,0.12);
+            display:flex;
+            flex-direction:column;
+            height: 340px;
+            text-align: center;
+        }
+        .box1 p {
+            margin: 10px 0;
+            font-size: 18px;
+            font-weight: 500;
+            text-align: center;
+        }
+        .box1 img{
+            border-radius: 12px;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .price{
+            margin-top: auto;
+            display: flex; 
+            justify-content: space-between;
+            align-items: center;
+            font-size: 20px;
+        }
+        .price .btn{
+            border-radius: 50px;
+            background-color: olive;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            width: 200px;
+            border: none;
+            padding: 8px 18px;
+            cursor: pointer;
+        }
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: -400px; 
+            background: whitesmoke;
+            color: black;
+            padding: 20px 25px;
+            border: 2px solid black;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            font-weight: 400;
+            min-width: 280px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.5s ease;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            right: 20px; 
+        }
+
+        .toast i {
+            font-size: 20px;
+            color: black;
+        }
+        .sidebar{
+            width: 320px;
+            padding: 20px;
+            border: 2px solid saddlebrown;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+        .sidebar h5{
+            margin: 0 0 8px;
+            font-weight: 600;
+            font-size: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid saddlebrown;
+            border-top: 2px solid saddlebrown;
+            padding: 10px;
+        }
+        .sidebar .special{
+            border-top: none;
+            padding: 10px;
+        }
+        .sidebar p{
+            margin: 8px 0;
+            font-size: 18px;
+            padding: 5px;
+        }
+        .sidebar h5 .top-margin{
+            margin-top: 16px;
+        }
+        .footer{
+            background-color: saddlebrown;
+            color: white;
+        }
+        .footer ul{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10px;
+            list-style-type: none;
+            border-bottom: 2px solid white;
+            padding-top: 20px;
+        }
+        h3{
+            font-weight: 500;
+        }
+        .footerlogo{
+            width: 200px;
+            margin-top: 60px;
+        }
+        .copyrights{
+            display: flex;
+            padding: 20px;
+            font-size: 18px;
+            font-weight: 500;
+            justify-content: center;
+            padding: 20px;
+        }
+        @media (max-width:1000px){
+            .container{padding:22px;}
+            .header{padding:10px 14px;gap:18px;}
+            .logo img{width:64px;height:64px;}
+            .searchbar{width:220px;height:42px;}
+            .content{gap:22px;justify-content:flex-start;}
+            aside,.sidebar{width:260px;box-sizing:border-box;height:auto;}
+            .container1 .box{width:240px;height:180px;}
+            .products{grid-template-columns:repeat(2,1fr);gap:20px;}
+            .box1{max-width:320px;padding:16px;height:auto;}
+        }
+        @media (max-width:700px){
+            .container{padding:14px;}
+            .content{flex-direction:column;gap:16px;}
+            aside,.sidebar{width:100%;position:relative;height:auto;margin-top:0;}
+            .container1{justify-content:center;gap:12px;padding:12px;}
+            .container1 .box{width:72%;max-width:320px;height:150px;}
+            .products{grid-template-columns:1fr;gap:16px;padding-bottom:18px;}
+            .box1{width:100%;max-width:520px;margin:0 auto;padding:14px;}
+            .searchbar{width:160px;height:36px;}
+        }
+        @media (max-width:480px){
+            .container{padding:10px;}
+            .logo img{width:56px;height:56px;}
+            .searchbar{width:140px;height:34px;}
+            .container1 .box{width:90%;max-width:260px;height:120px;}
+            .box1 img{height:130px;}
+            .border{font-size:20px;}
+        }
+    </style>    
+</head>
+<body>
+    <div class="tagline">
+            <p>Welcome To Our Shop. Kindly Note, Currently We Delivery To All Location!. Thank You For Your Love And Support.</p>
+        </div>
+    <header class="header">
+        <div class="logo">
+            <img src="cherry_cake_transparent.png" alt="Cake Logo">
+        </div>
+        <nav class="navbar">
+            <a href="products.html">PRODUCTS</a>
+            <a href="aboutus.html">ABOUT US</a>
+            <a href="specialcakes.html">SPECIAL CAKES</a>
+            <a href="snacks.html">SNACKS</a>
+            <a href="contactus.html">CONTACT US</a>
+        </nav>
+        <div class="searchbar">
+            <input type="text" placeholder="Search">
+            <img src="search.png" alt="Search" class="icon">
+        </div>
+        </div>
+        <div class="icons">
+            <a href="loginsignup.html"><img src="https://img.icons8.com/?size=100&id=7819&format=png" alt="Cart"></a>
+            <a href="shoppingcart.html"><img src="https://img.icons8.com/?size=60&id=60952&format=png" alt="Cart"></a>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content">
+    <main>
+        <div class="cake">
+            <h3 class="border">Speciality Cakes</h3>
+        <div class="divider"><span></span></div>
+        <div class="container1">
+            <div class="box">
+                <img src="cake23.jpg" alt="Cake 1">
+            </div>
+            <div class="box">
+                <img src="cake24.jpg" alt="Cake 2">
+            </div>
+            <div class="box">
+                <img src="cake25.jpg" alt="Cake 3">
+            </div>
+        <h1>Birthday Cake</h1>
+        <div class="products">
+        <div class="box1">
+        <img src="cake26.jpg" alt="White Forest">
+        <p>White Forest</p>
+        <div class="price">
+            <p>Rs.750</p>
+            <button class="btn" onclick="showToast()">Add Cart</button>
+        <div id="toast" class="toast">
+            <i class="fa fa-cart-plus"></i>
+             Your item added to cart
+        </div>
+        </div>
+        </div>
+        <div class="box1">
+        <img src="cake27.jpg" alt="Tea Cake">
+        <p>Tea Cake</p>
+        <div class="price">
+            <p>Rs.590</p>
+            <button class="btn" onclick="showToast()">Add Cart</button>
+        <div id="toast" class="toast">
+            <i class="fa fa-cart-plus"></i>
+             Your item added to cart
+        </div>
+        </div>
+        </div>
+        <div class="box1">
+        <img src="cake28.jpg" alt="Brownies">
+        <p>Brownies</p>
+        <div class="price">
+            <p>Rs.850</p>
+            <button class="btn" onclick="showToast()">Add Cart</button>
+        <div id="toast" class="toast">
+            <i class="fa fa-cart-plus"></i>
+             Your item added to cart
+        </div>
+        </div>
+        </div>
+        <div class="box1">
+        <img src="cake11.jpg" alt="Choco Cake">
+        <p>Choco Cake</p>
+        <div class="price">
+            <p>Rs.800</p>
+            <button class="btn" onclick="showToast()">Add Cart</button>
+        <div id="toast" class="toast">
+            <i class="fa fa-cart-plus"></i>
+             Your item added to cart
+        </div>
+        </div>
+        </div>
+        <div class="box1">
+        <img src="cake10.jpg" alt="Cheese Cake">
+        <p>Cheese Cake</p>
+        <div class="price">
+            <p>Rs.750</p>
+            <button class="btn" onclick="showToast()">Add Cart</button>
+        <div id="toast" class="toast">
+            <i class="fa fa-cart-plus"></i>
+             Your item added to cart
+        </div>
+        </div>
+        </div>
+        <div class="box1">
+        <img src="cake9.jpg" alt="White Forest">
+        <p>White Forest</p>
+        <div class="price">
+            <p>Rs.500</p>
+            <button class="btn" onclick="showToast()">Add Cart</button>
+        <div id="toast" class="toast">
+            <i class="fa fa-cart-plus"></i>
+             Your item added to cart
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    </main>
+    <div class="sidebar">
+    <aside>
+                <h5 class="special">Special Cakes</h5>
+                <p>Birthday Cake</p>
+                <p>Anniversary Cake</p>
+                <p>Kids Designer Cake</p>
+                <h5 class="top-margin">Time Slot</h5>
+                <p><i class="fa-solid fa-square-check"></i> Same Day Delivery</p>
+                <p><i class="fa-solid fa-square-check"></i> 3 Hours Delivery</p>
+                <p><i class="fa-solid fa-square-check"></i> 3 Hours Delivery</p>
+                <p><i class="fa-solid fa-square-check"></i> Next Day Delivery</p>
+                <h5 class="top-margin">Flavours</h5>
+                <p><i class="fa-solid fa-square-check"></i> Black Forest</p>
+                <p><i class="fa-solid fa-square-check"></i> Butterscotch</p>
+                <p><i class="fa-solid fa-square-check"></i> Blueberry</p>
+                <p><i class="fa-solid fa-square-check"></i> Choco Truffle</p>
+                <p><i class="fa-solid fa-square-check"></i> Pineapple</p>
+                <p><i class="fa-solid fa-square-check"></i> Vannilla</p>
+                <p><i class="fa-solid fa-square-check"></i> Strawberry</p>
+                <p><i class="fa-solid fa-square-check"></i> White Forest</p>
+                <p><i class="fa-solid fa-square-check"></i> Black Forest</p>
+            </div>
+    </aside>
+    </div>
+    </div>
+    </div>
+    <footer class="footer">
+        <ul>
+            <li>
+                <img src="cherry_cake_transparent.png" alt="Cake Logo" class="footerlogo">
+            </li>
+            <li>
+                <h3>ONLINE SHOPPING</h3>
+                <p>Home</p>
+                <p>Products</p>
+                <p>About Us</p>
+                <p>Special Cake</p>
+                <p>Snacks</p>
+                <p>Contact</p>
+            </li>
+            <li>
+                <h3>USEFUL LINKS</h3>
+                <p>T & C</p>
+                <p>Booking</p>
+                <p>Cancellation</p>
+                <p>Privacy Policy</p>
+                <p>Return / Refunds</p>
+                <p>Payments</p>
+            </li>
+            <li>
+                <h3>CONTACT US</h3>
+                <p><i class="fa fa-map-marker-alt"></i>  Manek Ratna<br>3rd Floor, Block No. 304,<br>Ryna Arcade, Zakeria Road, MAlad (West),<br>Maharashtra, Mumbai, Pincode: 400064</p>
+                <p><i class="fa fa-phone"></i> +91 8879438031</p>
+                <p><i class="fa fa-envelope"></i> info@cakeshop.com</p>
+            </li>
+        </ul>
+        <div class="copyrights">
+            &copy; 2021-2025 www.cakeshop.com All Rights Reserved.
+        </div>
+    </footer>
+    <script>
+    function showToast() {
+      let toast = document.getElementById("toast");
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3000);
+    }
+  </script>
+
+</body>
+</html>
